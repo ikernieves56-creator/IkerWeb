@@ -1,0 +1,115 @@
+/* Fondo con degradado suave */
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(180deg, #1a1a1a, #2a0b1e);
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mi-gift {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: auto;
+}
+
+/* Texto arriba */
+.titulo {
+    color: #ff4fdc;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 0 0 10px #ff4fdc, 0 0 25px #ff4fdc;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff4fdc; }
+    to   { text-shadow: 0 0 25px #ff4fdc; }
+}
+
+#flowers-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    border-radius: 50%;
+    animation: bloom 3s ease-out forwards;
+}
+
+.flower .petal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.9;
+    transform-origin: center;
+}
+
+.flower .center {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background: yellow;
+    border-radius: 50%;
+    top: 30%;
+    left: 30%;
+    box-shadow: 0 0 10px yellow;
+}
+
+@keyframes fade {
+    0%   { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+@keyframes bloom {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Corazón latiendo detrás */
+.heart {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    transform: translate(-50%, -50%);
+    background: #ff3ea5;
+    box-shadow: 0 0 25px #ff3ea5;
+    clip-path: polygon(50% 80%, 100% 40%, 78% 0%, 50% 20%, 22% 0%, 0% 40%);
+    animation: beat 1.2s infinite ease-in-out;
+    z-index: 1;
+}
+@keyframes beat {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.25); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
